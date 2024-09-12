@@ -1,9 +1,10 @@
+import React from 'react';
 import styles from './index.module.css';
 import logo6 from "../../../asset/deb.png";
 
 const Section2 = () => {
     return (
-        <div className={styles.mainCon}>
+        <div className={`${styles.mainCon} wow animate__animated animate__backInUp`}>
             <div className={styles.about}>
                 <img src={logo6} alt="deb" className={styles.logo6} />
                 <div className={styles.textContainer}>
