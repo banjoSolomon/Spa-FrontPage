@@ -1,52 +1,43 @@
 /* Section4/index.module.css */
 .spa {
     padding: 2rem;
-    margin-right: 100px;
+    display: flex; /* Arrange child elements in a row */
+    justify-content: space-between; /* Distribute space between items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.view {
+/* Style for each section */
+.view, .views, .mass {
     display: flex;
-    flex-direction: column; /* Stacks text and image vertically */
+    flex-direction: column; /* Stack text and image vertically */
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 1rem; /* Margin around each section for spacing */
 }
 
-.scrub {
+/* Style for the text */
+.scrub, .masssage {
     font-size: 1.5rem;
     font-weight: bold;
     color: #064E3B;
     text-align: center;
-    margin-bottom: 1rem; /* Adds space between text and image */
+    margin-bottom: 1rem; /* Space between text and image */
 }
 
-.logo12, .logo13 {
-    width: 300px; /* Adjust the size of the images as needed */
+/* Style for the images */
+.logo12, .logo13, .logo15 {
+    width: 300px; /* Consistent size for images */
     height: auto;
     border-radius: 8px;
     object-fit: cover;
-    margin-right: 20px;
 }
 
-/* Makes the view containers display horizontally */
-.spa {
-    display: flex;
-    justify-content: space-around; /* Distributes space between elements */
-    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-}
-
-/* Moves the second section (views) to the left */
-.views {
-    margin-right: 290px; /* Moves the section towards the left */
-}
-
+/* Optional: Adjust specific image sizes */
 .logo13 {
-    width: 230px; /* Optional: Adjust size if needed */
-    height: auto;
-    object-fit: cover;
+    width: 230px; /* Adjust size as needed */
 }
-.logo12{
-    width: 270px; /* Optional: Adjust size if needed */
-    height: auto;
-    object-fit: cover;
-
+.logo12 {
+    width: 270px; /* Adjust size as needed */
+}
+.logo15 {
+    height: 330px; /* Adjust size as needed */
 }

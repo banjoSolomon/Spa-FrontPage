@@ -1,6 +1,7 @@
 import styles from './index.module.css';
 import logo12 from "../../../asset/facials.png";
 import logo13 from "../../../asset/pedicure.png";
+import logo15 from  "./../../../asset/sol.png";
 import React from "react";
 
 const Section4 = () => {
@@ -14,8 +15,13 @@ const Section4 = () => {
                 <p className={styles.scrub}>Pedicure<br/> With Massage</p>
                 <img src={logo13} alt="pedicure" className={styles.logo13}/>
             </div>
+            <div className={styles.mass}>
+                <p className={styles.masssage}>Massage</p>
+                <img src={logo15} alt="massage" className={styles.logo15}/>
+            </div>
         </div>
     );
 }
 
 export default Section4;
+
