@@ -1,0 +1,52 @@
+/* Section4/index.module.css */
+.spa {
+    padding: 2rem;
+    margin-right: 100px;
+}
+
+.view {
+    display: flex;
+    flex-direction: column; /* Stacks text and image vertically */
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.scrub {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #064E3B;
+    text-align: center;
+    margin-bottom: 1rem; /* Adds space between text and image */
+}
+
+.logo12, .logo13 {
+    width: 300px; /* Adjust the size of the images as needed */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Makes the view containers display horizontally */
+.spa {
+    display: flex;
+    justify-content: space-around; /* Distributes space between elements */
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+/* Moves the second section (views) to the left */
+.views {
+    margin-right: 290px; /* Moves the section towards the left */
+}
+
+.logo13 {
+    width: 230px; /* Optional: Adjust size if needed */
+    height: auto;
+    object-fit: cover;
+}
+.logo12{
+    width: 270px; /* Optional: Adjust size if needed */
+    height: auto;
+    object-fit: cover;
+
+}
