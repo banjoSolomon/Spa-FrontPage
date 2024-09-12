@@ -1,0 +1,57 @@
+/* Section3/index.module.css */
+.sec {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.our {
+    text-align: center;
+}
+
+.service {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.description {
+    margin: 1rem 0;
+    color: #666;
+}
+
+.servicesContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.serviceItem {
+    text-align: center;
+    position: relative;
+}
+
+.logo10, .logo11, .logo12 {
+    width: 100px; /* Adjust the size of the icons */
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #E5E5E5; /* Circular border */
+    position: relative;
+    object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+.serviceItem h3 {
+    font-weight: bold;
+    color: #1B5E20; /* This is a green shade */
+    margin-top: 10px;
+}
+
+.serviceItem::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #E5E5E5;
+    transform: translateY(-50%);
+}
