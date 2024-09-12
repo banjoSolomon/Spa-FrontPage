@@ -1,4 +1,4 @@
-/* Section3/index.module.css */
+
 .sec {
     padding: 2rem;
     background-color: #f9f9f9;
@@ -23,25 +23,28 @@
     justify-content: space-around;
     margin-top: 2rem;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .serviceItem {
     text-align: center;
     position: relative;
+    flex: 1 1 30%;
+    max-width: 300px;
+    margin: 1rem;
 }
 
 .logo10, .logo11, .logo12 {
-    width: 100px; /* Adjust the size of the icons */
+    width: 100px;
     height: 100px;
-    border-radius: 50%; /* Makes the image circular */
-    border: 3px solid #E5E5E5; /* Circular border */
-    position: relative;
-    object-fit: cover; /* Ensures the image fits within the circle */
+    border-radius: 50%;
+    border: 3px solid #E5E5E5;
+    object-fit: cover;
 }
 
 .serviceItem h3 {
     font-weight: bold;
-    color: #1B5E20; /* This is a green shade */
+    color: #1B5E20;
     margin-top: 10px;
 }
 
@@ -54,4 +57,46 @@
     height: 3px;
     background-color: #E5E5E5;
     transform: translateY(-50%);
+}
+
+
+@media (max-width: 768px) {
+    .servicesContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .serviceItem {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .logo10, .logo11, .logo12 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .service {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .logo10, .logo11, .logo12 {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
 }

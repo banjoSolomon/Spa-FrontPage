@@ -1,43 +1,73 @@
-/* Section4/index.module.css */
+
 .spa {
     padding: 2rem;
-    display: flex; /* Arrange child elements in a row */
-    justify-content: space-between; /* Distribute space between items */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* Style for each section */
+
 .view, .views, .mass {
     display: flex;
-    flex-direction: column; /* Stack text and image vertically */
+    flex-direction: column;
     align-items: center;
-    margin: 1rem; /* Margin around each section for spacing */
+    margin: 1rem;
 }
 
-/* Style for the text */
 .scrub, .masssage {
     font-size: 1.5rem;
     font-weight: bold;
     color: #064E3B;
     text-align: center;
-    margin-bottom: 1rem; /* Space between text and image */
+    margin-bottom: 1rem;
 }
 
-/* Style for the images */
 .logo12, .logo13, .logo15 {
-    width: 300px; /* Consistent size for images */
+    width: 300px;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
-/* Optional: Adjust specific image sizes */
+
 .logo13 {
-    width: 230px; /* Adjust size as needed */
+    width: 230px;
 }
+
 .logo12 {
-    width: 270px; /* Adjust size as needed */
+    width: 270px;
 }
+
 .logo15 {
-    height: 330px; /* Adjust size as needed */
+    height: 330px;
+}
+
+
+
+@media (max-width: 768px) {
+    .spa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo12, .logo13, .logo15 {
+        width: 90%;
+        height: auto;
+    }
+
+    .scrub, .masssage {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .logo12, .logo13, .logo15 {
+        width: 100%;
+    }
+
+    .scrub, .masssage {
+        font-size: 1rem;
+    }
 }

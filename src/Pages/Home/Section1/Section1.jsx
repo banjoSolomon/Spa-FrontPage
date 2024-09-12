@@ -64,7 +64,7 @@ const Section1 = () => {
                 <div className={styles.myTime}>
                     <div className={styles.timeUnit}>
                         <span className={`${styles.digit}`}>{hours}</span>
-                        <span className={styles.label}>hours</span>
+                        <span className={styles.label}>hour</span>
                     </div>
                     <span>:</span>
                     <div className={styles.timeUnit}>

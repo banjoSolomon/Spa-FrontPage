@@ -1,0 +1,52 @@
+
+.offers {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column; /* Stack text and images vertically */
+    align-items: center; /* Center the content horizontally */
+    text-align: center; /* Center the text */
+    background-color: #f9f9f9;
+
+}
+
+
+.special {
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: #1B5E20;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.special p {
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.logo20, .logo21 {
+    width: 580px; /* Set a consistent width for the images */
+    height: 590px; /* Set a consistent height for the images */
+    /*object-fit: cover; !* Ensure images fit properly within the specified size *!*/
+    margin: 1rem; /* Add some space around the images */
+}
+
+/* Make images sit next to each other */
+.offers img {
+    display: inline-block; /* Ensure the images stay on the same line */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .logo20, .logo21 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo20, .logo21 {
+        width: 150px;
+        height: 150px;
+    }
+}
