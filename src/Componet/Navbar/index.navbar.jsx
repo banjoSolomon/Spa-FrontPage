@@ -38,7 +38,9 @@ const Navbar = () => {
                     <span className={styles.hamburger}></span>
                     <span className={styles.hamburger}></span>
                 </div>
-                <div className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
+                <div
+                    className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''} ${menuOpen ? styles.menuSlideIn : ''}`}
+                >
                     <p>Home</p>
                     <p>About</p>
                     <p>Gallery</p>

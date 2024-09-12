@@ -1,3 +1,14 @@
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .nav {
     background-color: #E5E5E5;
     padding: 1rem 4rem;
@@ -13,9 +24,8 @@
     transition: background-color 0.3s ease;
 }
 
-body{
+body {
     background-color: #E5E5E5;
-
 }
 
 .navScrolled {
@@ -36,6 +46,11 @@ body{
     border-radius: 50%;
     object-fit: cover;
     margin-right: 1.5rem;
+    animation: slideInFromLeft 2s ease-out;
+}
+
+.menu p, .menu img {
+    animation: slideInFromLeft 2s ease-out;
 }
 
 .hamburgerMenu {
