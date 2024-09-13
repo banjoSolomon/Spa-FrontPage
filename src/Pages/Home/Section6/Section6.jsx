@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const Section6 = () => {
     const [formData, setFormData] = useState({
+
         name: '',
         email: '',
         phone: '',
