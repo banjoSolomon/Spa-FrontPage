@@ -38,11 +38,10 @@ const Section6 = () => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
-            // Open WhatsApp with a pre-filled message
-            const { name, email, phone, message } = formData;
-            const phoneNumber = "2348066306125"; // WhatsApp number in international format (recipient's number)
 
-            // Use encodeURIComponent to handle special characters and line breaks
+            const { name, email, phone, message } = formData;
+            const phoneNumber = "2348066306125";
+
             const preFilledMessage = `Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(message)}`;
 
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${preFilledMessage}`;
