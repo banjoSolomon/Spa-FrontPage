@@ -1,114 +1,90 @@
-import React, { useState } from "react";
-import style from "./index.module.css"; // Your custom CSS
-import logo30 from "../../../asset/Mask Group.png"; // Your logo
+import React, { useState } from 'react';
 
 const Section6 = () => {
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
     });
-
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        setFormData({ ...formData, [name]: value });
     };
 
     const validate = () => {
-        const newErrors = {};
-        if (!formData.name) newErrors.name = "Name is required.";
-        if (!formData.email) {
-            newErrors.email = "Email is required.";
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = "Email address is invalid.";
-        }
-        if (!formData.phone) {
-            newErrors.phone = "Phone number is required.";
-        } else if (!/^\d{11}$/.test(formData.phone)) {
-            newErrors.phone = "Phone number must be 11 digits.";
-        }
-        if (!formData.message) newErrors.message = "Message is required.";
-        return newErrors;
+        const validationErrors = {};
+        if (!formData.name) validationErrors.name = 'Name is required';
+        if (!formData.email) validationErrors.email = 'Email is required';
+        if (!formData.phone) validationErrors.phone = 'Phone number is required';
+        if (!formData.message) validationErrors.message = 'Message is required';
+        return validationErrors;
     };
 
     const sendWhatsAppMessage = (name, email, phone, message) => {
-        const encodedMessage = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`);
-        const url = `https://wa.me/2348103722570?text=${encodedMessage}`; // Replace with recipient's phone number
-
-        window.open(url, '_blank'); // This will open the link in a new tab or window
+        const url = `https://wa.me/${phone}?text=Hello, my name is ${name}. My email is ${email}. Message: ${message}`;
+        window.open(url, '_blank');
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length === 0) {
             // Send WhatsApp message
             sendWhatsAppMessage(formData.name, formData.email, formData.phone, formData.message);
+
+            // Send email confirmation
+            const messageDetails = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`;
+            await fetch('http://localhost:3000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userEmail: formData.email, messageDetails }),
+            });
         } else {
             setErrors(validationErrors);
         }
     };
 
     return (
-        <div className={style.appoint}>
-            <div className={style.imageContainer}>
-                <img src={logo30} alt="pedicure" className={style.logo30} />
-                <div className={style.overlay}>
-                    <h2 className={style.title}>Make An Appointment</h2>
-                    <p className={style.description}>
-                        Schedule your session today and take the first step towards relaxation
-                    </p>
-                    <form className={style.form} onSubmit={handleSubmit}>
-                        <div className={style.inputGroup}>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                className={style.input}
-                                value={formData.name}
-                                onChange={handleChange}
-                            />
-                            {errors.name && <span className={style.error}>{errors.name}</span>}
-                        </div>
-                        <div className={style.inputGroup}>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                className={style.input}
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                            {errors.email && <span className={style.error}>{errors.email}</span>}
-                        </div>
-                        <div className={style.inputGroup}>
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder="Phone"
-                                className={style.input}
-                                value={formData.phone}
-                                onChange={handleChange}
-                            />
-                            {errors.phone && <span className={style.error}>{errors.phone}</span>}
-                        </div>
-                        <div className={style.inputGroup}>
-                            <textarea
-                                name="message"
-                                placeholder="Message"
-                                className={style.textarea}
-                                value={formData.message}
-                                onChange={handleChange}
-                            />
-                            {errors.message && <span className={style.error}>{errors.message}</span>}
-                        </div>
-                        <button type="submit" className={style.button}>Send</button>
-                    </form>
-                </div>
-            </div>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                {errors.name && <span>{errors.name}</span>}
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
+                {errors.email && <span>{errors.email}</span>}
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                />
+                {errors.phone && <span>{errors.phone}</span>}
+                <textarea
+                    name="message"
+                    placeholder="Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                />
+                {errors.message && <span>{errors.message}</span>}
+                <button type="submit">Send</button>
+            </form>
         </div>
     );
 };
