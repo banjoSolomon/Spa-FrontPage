@@ -34,9 +34,9 @@ const Section1 = () => {
         } else if (hours === closeHour && minutes === 0) {
             setStatus("Now Closed");
         } else if (hours >= openHour && hours < closeHour) {
-            setStatus("Open");
+            setStatus("Now Open");
         } else {
-            setStatus("Closed");
+            setStatus("Now Closed");
         }
     };
 
@@ -49,7 +49,7 @@ const Section1 = () => {
 
     const { hours, minutes, seconds } = formatTime(time);
 
-    // Determine status color
+
     const statusColor = status.includes("Closed") ? styles.closed : styles.open;
 
     return (
