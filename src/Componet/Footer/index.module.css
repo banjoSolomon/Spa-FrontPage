@@ -5,7 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-
 .footerContainer {
     display: flex;
     justify-content: space-between;
@@ -27,7 +26,13 @@
 .footerSection p,
 .footerSection ul {
     margin-bottom: 1rem; /* 16px */
-    font-size: 0.875rem; /* 14px */
+    font-size: 1rem; /* 16px */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.footerSection p:hover {
+    color: #004d00; /* Dark green color on hover */
+    transform: scale(1.05); /* Slight zoom-out effect */
 }
 
 .footerSection ul {
@@ -37,6 +42,12 @@
 
 .footerSection ul li {
     margin-bottom: 0.5rem; /* 8px */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.footerSection ul li:hover {
+    color: #004d00; /* Dark green color on hover */
+    transform: scale(1.05); /* Slight zoom-out effect */
 }
 
 .footerBottom {
@@ -55,7 +66,7 @@
 
 .socialLinks a {
     color: #ccc;
-    margin: 0 1rem; /* 16px */
+    margin: 0 0.5rem; /* Adjust spacing between icons */
     text-decoration: none;
     font-size: 1.125rem; /* 18px */
     transition: color 0.3s;
@@ -63,6 +74,16 @@
 
 .socialLinks a:hover {
     color: white;
+}
+
+.socialLinks svg {
+    width: 24px; /* Set width of icons */
+    height: 24px; /* Set height of icons */
+    transition: opacity 0.3s;
+}
+
+.socialLinks svg:hover {
+    opacity: 0.7;
 }
 
 @media (max-width: 768px) {
